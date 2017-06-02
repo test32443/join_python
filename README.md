@@ -1,2 +1,4 @@
 # join_python
-Sample script to perform mapreduce join using Python
+This is a sample project containing scripts to perform mapreduce join and aggregation using Python
+
+
