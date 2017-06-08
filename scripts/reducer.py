@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from sys import stdin
+import sys
 
 """reducer function
 gets a list of customers and sales grouped by cust_id
@@ -12,18 +12,18 @@ states = {}
 for line in sys.stdin:
     try:
         line = line.strip()
-        customerid,state,price = line.split(",")
+        customerId, state, price = line.split(",")
         if state == "-1":
-            #New (unknown) state, calculate totals
+            # New (unknown) state, calculate totals
             stateSum = stateSum + float(price)
             # print '%5.2f' % stateSum
         else:
-            #State identified, add it to dictionary
+            # State identified, add it to dictionary
             states[state] = states.get(state,0) + stateSum
             stateSum = 0
             # print '%s: %5.2f' % (state,stateSum)
     
-    #This module is used by app that does not manage error handling
+    # This module is used by app that does not manage error handling
     except:
         pass
 
